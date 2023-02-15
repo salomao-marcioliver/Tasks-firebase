@@ -107,9 +107,9 @@ function Admin() {
         />
 
         {Object.keys(edit).length > 0 ? (
-          <button className='btn-register' type='submit'>Atualizar tarefa</button>
+          <button id='btn-update' className='btn-register' type='submit'>Atualizar tarefa</button>
         ) : (
-          <button className='btn-register' type='submit'>Registrar tarefa</button>
+          <button id='btn-register' className='btn-register' type='submit'>Registrar tarefa</button>
         )}
       </form>
 
@@ -117,7 +117,7 @@ function Admin() {
         <article key={item.id} className='list'>
           <p>{item.tarefa}</p>
           <div>
-            <button onClick={() => editTarefa(item)}>Editar</button>
+            <button onClick={() => editTarefa(item)} className='btn-edit'>Editar</button>
             <button onClick={() => deleteTarefa(item.id)} className='btn-delete'>Concluir</button>
           </div>
         </article>

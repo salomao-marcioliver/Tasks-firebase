@@ -14,6 +14,28 @@
   margin-bottom: 28px;
 }
 
+#btn-register {
+  color: #25ff54;
+  background-color: #000;
+  transition: all 0.6s;
+}
+
+#btn-register:hover {
+  width: 220px;
+  height: 45px;
+}
+
+#btn-update {
+  color: #25ff54;
+  background-color: #000;
+  transition: all 0.6s;
+}
+
+#btn-update:hover {
+  width: 220px;
+  height: 45px;
+}
+
 .list {
   width: 90%;
   max-width: 600px;
@@ -23,37 +45,43 @@
   border-radius: 4px;
   margin-bottom: 12px;
   justify-content: center;
-  padding: 14px 8px;
+  padding: 20px 20px;
+  box-shadow: 2px 3px rgba(0, 0, 0, 0.5);
 }
 
 .list p{
-  margin-bottom: 8px;
+  margin-bottom: 20px;
 }
 
 .list button {
   margin-right: 8px;
   border: 0;
   border-radius: 4px;
-  padding: 4px;
+  padding: 8px;
+}
+
+.btn-edit {
+  color: #ffcc23;
+  background-color: #000;
+  
 }
 
 .btn-delete{
-  color: #ffcc23;
-  background-color: transparent;
+  color: #000000;
+  background-color: #25ff54;
 }
 
 .btn-logout {
-  position: absolute;
+  position: fixed;
   bottom: 6%;
-  left: 4%;
+  right: 5%;
   height: 60px;
   width: 60px;
   border-radius: 30px;
   border: 0;
   font-weight: bold;
-  background-color: rgba(219, 38, 41, 0.35);
+  background-color: rgba(219, 38, 41, 0.5);
   color: #fafafa;
-  transition: all 0.5s;
 }
 
 .btn-logout:hover{

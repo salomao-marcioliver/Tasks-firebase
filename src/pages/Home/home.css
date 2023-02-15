@@ -10,6 +10,7 @@
 .home-container h1 {
   font-size: 48px;
   margin-bottom: 8px;
+  color: #25ff54;
 }
 
 .home-container span {
@@ -32,11 +33,13 @@
 }
 
 .form button {
+  margin: 20px auto;
   height: 36px;
   border: 0;
   border-radius: 4px;
-  background-color: #3366ff;
-  color: #FFF;
+  width: 200px;
+  background-color: #25ff54;
+  color: #000;
   font-size: 18px;
 }
 
