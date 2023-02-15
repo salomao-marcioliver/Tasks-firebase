@@ -20,7 +20,7 @@ function Admin() {
         const data = JSON.parse(userDetail)
         const tarefasRef = collection(db, "tarefas")
         const q = query(tarefasRef, orderBy('created', 'desc'), where('userUid', '==', data?.uid))
-        const unsub = onSnapshot(q, (snapshot) => {
+        onSnapshot(q, (snapshot) => {
           let lista = [];
 
           snapshot.forEach((doc) => {
