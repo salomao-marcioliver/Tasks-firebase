@@ -4,6 +4,7 @@ import './home.css'
 import { auth } from '../../firebaseConnection'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify';
 
 function Home() {
   const [email, setEmail] = useState('')
@@ -20,10 +21,16 @@ function Home() {
           navigate('/admin', { replace: true })
         })
         .catch((error) => {
-          console.log(error)
+          if(error.code === 'auth/wrong-password'){
+            toast.error('Senha Incorreta')
+          }else if(error.code === 'auth/user-not-found'){
+            toast.error('Usuário não cadastrado')
+          }else if(error.code === 'auth/invalid-email'){
+            toast.error('O email inserido é inválido')
+          }
         })
     } else {
-      alert("Preencha todos os campos!")
+      toast.warning("Preencha todos os campos!")
     }
   }
 

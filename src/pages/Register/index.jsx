@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { auth } from '../../firebaseConnection'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify';
 
 function Register() {
   const [email, setEmail] = useState('')
@@ -18,10 +19,14 @@ function Register() {
           navigate('/admin', { replace: true })
         })
         .catch((error) => {
-          console.log(error)
+          if(error.code === 'auth/weak-password'){
+            toast.error('A senha deve ter pelo menos 6 caracteres')
+          }else if(error.code === 'auth/invalid-email'){
+            toast.error('Poxa, o email inserido é inválido ):')
+          }
         })
     } else {
-      alert("Preencha todos os campos!")
+      toast.warning("Preencha todos os campos!")
     }
   }
 
