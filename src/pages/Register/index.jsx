@@ -23,6 +23,8 @@ function Register() {
             toast.error('A senha deve ter pelo menos 6 caracteres')
           }else if(error.code === 'auth/invalid-email'){
             toast.error('Poxa, o email inserido é inválido ):')
+          }else if(error.code === 'auth/email-already-in-use'){
+            toast.error('O email inserido já está em uso')
           }
         })
     } else {
